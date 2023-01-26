@@ -5,11 +5,12 @@ do {
 } while (isNaN(yourChoice));
 
 let result = {};
-for (let i = 1; i <= yourChoice; i += 1){
+result[2] = true;
+for (let i = 1; i <= yourChoice; i += 2){
 	result[i] = true;
 }
 
-let p = 2;
+let p = 3;
 while (true) {
 	for (let i = 2 * p; i <= yourChoice; i += p) {
 		result[i] = false;
@@ -17,7 +18,7 @@ while (true) {
 
  	let new_p = false;
 
- 	for ( let i = p + 1; i <= yourChoice; i += 1) {
+ 	for ( let i = p + 2; i <= yourChoice; i += 2) {
  		if (result[i]) {
  			new_p = i;
  			break;
