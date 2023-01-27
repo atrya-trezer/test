@@ -3,45 +3,40 @@ do {
 	yourChoice = Number(readlineSync.question('Please enter number: '));
 } while (isNaN(yourChoice));
 
-function getCommonElements(array1, array2) {
-	const array = [];
- 		for (let i = 0; i < array1.length; i += 1) {
+const getDividers = (num) => {
+	const result = [num];
+	let choice = num ** 0.5;
+	if (choice === Math.floor(choice)) {
+		result.push(choice);
+	}
+	for (let i = 2; i < choice; i += 1) {
+		if (num % i === 0) {
+			result.push(i);
+			result.push(num / i);
+		}
+	}
+
+	return result.sort(( a, b ) => a - b);
+}
+
+const checkForCommonDividers = (array1, array2) => {
+	for (let p = 0; p < array1.length; p += 1) {
 		for (let j = 0; j < array2.length; j += 1) {
-    		if (array1[i] === array2[j]){
-      			array.push(i);
+			if (array1[p] === array2[j]){
+				return true;
 			}
 		}
 	}
-	return array;
+	return false;
 }
 
-const resultDivider = [1, yourChoice];
-let choice = yourChoice ** 0.5;
-if (choice === Math.floor(choice)) {
-	resultDivider.push(choice);
-}
-for (let i = 2; i < choice; i += 1) {
-	if (yourChoice % i === 0) {
-		resultDivider.push(i);
-		resultDivider.push(yourChoice / i);
-	}
-}
+const yourChoiceDividers = getDividers(yourChoice);
 
-const result = []
+let result = 0;
 for (let i = 1; i < yourChoice; i += 1) {
-	const resultDividerI = [1, i];
-	let choiceI = i ** 0.5;
-	if (choiceI === Math.floor(choiceI)) {
-		resultDividerI.push(choiceI);
-	}
-	for (let t = 2; t < choiceI; t += 1) {
-		if (i % t === 0) {
-			resultDividerI.push(t);
-			resultDividerI.push(i / t);
-		}
-	}
-	if (getCommonElements(resultDivider, resultDividerI) === [1, yourChoice]) {
-		result.push(i)
+	const iDividers = getDividers(i);
+	if (!checkForCommonDividers(yourChoiceDividers, iDividers)) {
+		result += 1;
 	}
 }
-console.log (result.length)
+console.log (result)
