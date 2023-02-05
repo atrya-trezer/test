@@ -1,5 +1,5 @@
-import { mathematics, divider, numberDividers, eratosfen, euler } from './functions.js'
-let readlineSync = require('readline-sync');
+import { mathematics, divider, numberDividers, eratosfen, euler } from './functions.js';
+import * as readlineSync from 'readline-sync';
 do {
 	let firstNumber, action, secondNumber;
 

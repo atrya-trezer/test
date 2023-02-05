@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/atrya-trezer/test/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/atrya-trezer/test#readme"
 }
