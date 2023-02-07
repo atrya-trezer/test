@@ -1,20 +1,8 @@
-const readlineSync = require('readline-sync');
-
-const mathematics = (firstNumber, action, secondNumber) => {
-  let result = 0;
-  if (action === '+') {
-    result = firstNumber + secondNumber;
-  } else if (action === '-') {
-    result = firstNumber - secondNumber;
-  } else if (action === '*') {
-    result = firstNumber * secondNumber;
-  } else if (action === '/') {
-    result = firstNumber / secondNumber;
-  } else if (action === '^') {
-    result = firstNumber ** secondNumber;
-  }
-  return result;
-};
+/* eslint-disable no-console */
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-extraneous-dependencies */
+import * as readlineSync from 'readline-sync';
+import mathematics from './functions.js';
 
 do {
   let firstNumber; let action; let
