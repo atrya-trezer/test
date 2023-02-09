@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-extraneous-dependencies */
 import * as readlineSync from 'readline-sync';
 import mathematics from './functions.js';
 
