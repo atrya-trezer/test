@@ -1,5 +1,5 @@
 import * as readlineSync from 'readline-sync';
-import mathematics from './functions.js';
+import { mathematics } from './functions.js';
 
 do {
   let firstNumber; let action; let
